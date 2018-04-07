@@ -56,6 +56,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->command->call('migrate:reset');
         $this->command->call('migrate');
+        $this->command->call('passport:install');
         $this->command->line('Migrated tables.');
     }
 
@@ -67,6 +68,8 @@ class DatabaseSeeder extends Seeder
     public function users()
     {
         $this->users = factory(User::class, 10)->create();
+        $this->users[0]->email = 'test@lighthouse.com';
+        $this->users[0]->save();
 
         $this->command->line('Seeded users');
     }
