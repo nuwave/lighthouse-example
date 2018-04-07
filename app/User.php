@@ -26,4 +26,24 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Jobs user has created.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
+
+    /**
+     * Tasks assigned to user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tasks()
+    {
+        return $this->belongsToMany(Task::class)->withTimestamps();
+    }
 }
