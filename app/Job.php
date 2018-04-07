@@ -11,7 +11,7 @@ class Job extends Model
      *
      * @var array
      */
-    protected $fillable = ['title'];
+    protected $fillable = ['title', 'user_id'];
 
     /**
      * The user who created the task.

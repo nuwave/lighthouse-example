@@ -1,0 +1,20 @@
+type AuthToken {
+    token_type: String!
+    expires_in: Int!
+    access_token: String!
+    refresh_token: String!
+}
+
+type LoginPayload {
+    auth_token: AuthToken
+    user: User
+}
+
+extend type Mutation @group(namespace: "App\\Http\\GraphQL\\Mutations") {
+  login(
+    username: String!
+    password: String!
+    client_id: Int!
+    client_secret: String!
+  ): LoginPayload @field(resolver: "AccountMutator@login")
+}

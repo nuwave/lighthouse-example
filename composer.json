@@ -9,7 +9,8 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.6.*",
         "laravel/passport": "^5.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "nuwave/lighthouse": "v2-beta.3.9"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
