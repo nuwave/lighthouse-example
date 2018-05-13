@@ -2,12 +2,20 @@
 
 type Task {
   title: String!
+  pivot: TaskPivot
+}
+
+type TaskPivot {
+  user_id: Int!
+  task_id: Int!
+  pivot_field: String
 }
 
 type User {
   name: String!
   email: String!
   jobs: [Job!]! @hasMany
+  tasks: [Task!]! @hasMany(type: "paginator")
 }
 
 type Job {
@@ -18,12 +26,12 @@ type Job {
 
 type Query {
   me: User @auth
-  jobs: [Job!]! @paginate(model: "App\\Job")
+  jobs: [Job!]! @paginate(type: "connection", model: "App\\Job")
 }
 
 type Mutation @group(namespace: "App\\Http\\GraphQL\\Mutations") {
   createJob(title: String! @validate(rules: ["min:3"])): Job
     @create(model: "App\\Job")
-    @inject(context: "user.id" name: "user_id")
+    @inject(context: "user.id", name: "user_id")
     @event(fire: "App\\Events\\JobCreated")
 }

@@ -16,6 +16,7 @@ class CreateTaskUserTable extends Migration
         Schema::create('task_user', function (Blueprint $table) {
             $table->unsignedInteger('task_id');
             $table->unsignedInteger('user_id');
+            $table->string('pivot_field');
 
             $table->primary(['task_id', 'user_id']);
             $table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');

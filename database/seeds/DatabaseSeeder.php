@@ -107,7 +107,7 @@ class DatabaseSeeder extends Seeder
             factory(Task::class, 3)->create($data)->each(function (Task $task) {
                 $users = $this->users->random(3);
 
-                $task->users()->attach($users->pluck('id')->toArray());
+                $task->users()->attach($users->pluck('id')->toArray(),['pivot_field'=>'string_'.rand(1,6)]);
             });
         });
 
