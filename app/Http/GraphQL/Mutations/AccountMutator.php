@@ -20,7 +20,7 @@ class AccountMutator
 
         $response = app()->handle($request);
         $auth_token = json_decode($response->getContent(), true);
-        throw_if(array_key_exists('error', $authToken), new \Exception(array_get($authToken, 'error')));
+        throw_if(array_key_exists('error', $auth_token), new \Exception(array_get($auth_token, 'error')));
         $user = $this->user($auth_token);
 
         return compact('auth_token', 'user');
