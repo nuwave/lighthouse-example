@@ -8,7 +8,6 @@
         "lighthouse-php",
         "laravel-graphql"
     ],
-    "repositories": [{"type": "git", "url": "https://github.com/spawnia/larastan.git"}],
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
@@ -54,6 +53,12 @@
             "Tests\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/spawnia/larastan.git"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
