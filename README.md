@@ -1,13 +1,13 @@
 <div align="center">
-  <a href="https://lighthouse-php.com/tutorial">
+  <a href="https://lighthouse-php.com">
     <img src="https://raw.githubusercontent.com/nuwave/lighthouse/master/logo.png" alt=lighthouse-logo" width="150" height="150">
   </a>
 </div>
 
 <div align="center">
 
-# Lighthouse Tutorial
+# Lighthouse Example
 
-**This is the resulting source code of following the [Lighthouse Tutorial](https://lighthouse-php.com/tutorial).**
+**An example project using [nuwave/lighthouse](https://github.com/nuwave/lighthouse).**
 
 </div>
