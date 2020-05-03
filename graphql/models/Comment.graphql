@@ -1,0 +1,5 @@
+type Comment {
+    id: ID!
+    reply: String!
+    post: Post! @belongsTo
+}

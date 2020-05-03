@@ -1,0 +1,14 @@
+extend type Query {
+    me: User @auth
+    user(id: ID @eq): User @find
+    users: [User!]! @paginate(defaultCount: 10)
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+    posts: [Post!]! @hasMany
+}
