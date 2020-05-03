@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * Primary key
  * @property int $id
  *
- * Own attributes
+ * Attributes
  * @property string $title
  * @property string $content
  *
@@ -29,6 +30,22 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Post extends Model
 {
+    protected static function boot()
+    {
+        parent::boot();
+
+        self::creating(function (Post $post): void {
+            if($post->author_id === null) {
+                $user = auth()->user();
+                if($user === null) {
+                    throw new AuthenticationException();
+                }
+
+                $post->author_id = $user->getAuthIdentifier();
+            }
+        });
+    }
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class);

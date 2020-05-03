@@ -3,6 +3,7 @@
 namespace Tests\Feature\Models;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -12,6 +13,8 @@ class PostTest extends TestCase
 
     public function testCreatePost(): void
     {
+        $this->be(factory(User::class)->create());
+
         $id = Post::max('id') + 1;
         $title = 'Some title';
         $content = 'Some content';
@@ -34,7 +37,7 @@ class PostTest extends TestCase
             ])->assertExactJson([
                 'data' => [
                     'createPost' => [
-                        'id' => $id,
+                        'id' => "$id",
                         'title' => $title,
                         'content' => $content,
                     ]
