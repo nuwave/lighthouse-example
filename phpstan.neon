@@ -4,3 +4,6 @@ parameters:
   level: 8
   paths:
   - app
+  - database/factories
+  - database/seeds
+  - tests

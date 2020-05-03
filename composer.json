@@ -8,6 +8,7 @@
         "lighthouse-php",
         "laravel-graphql"
     ],
+    "repositories": [{"type": "git", "url": "https://github.com/spawnia/larastan.git"}],
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
@@ -26,7 +27,7 @@
         "laravel/tinker": "^2.0",
         "mockery/mockery": "^1.3.1",
         "nunomaduro/collision": "^4.1",
-        "nunomaduro/larastan": "^0.5.7",
+        "nunomaduro/larastan": "dev-undefined-variable-factory",
         "phpunit/phpunit": "^8.5"
     },
     "config": {
