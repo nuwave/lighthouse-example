@@ -26,7 +26,7 @@
         "laravel/tinker": "^2.0",
         "mockery/mockery": "^1.3.1",
         "nunomaduro/collision": "^4.1",
-        "nunomaduro/larastan": "dev-undefined-variable-factory",
+        "nunomaduro/larastan": "0.6.0",
         "phpunit/phpunit": "^8.5"
     },
     "config": {
@@ -71,6 +71,12 @@
             "@php artisan ide-helper:generate",
             "@php artisan ide-helper:meta",
             "@php artisan lighthouse:ide-helper"
+        ],
+        "stan": [
+            "phpstan analyse --memory-limit=2048"
+        ],
+        "test": [
+            "phpunit"
         ]
     }
 }

@@ -7,3 +7,6 @@ parameters:
   - database/factories
   - database/seeds
   - tests
+  ignoreErrors:
+  - message: '#Variable \$factory might not be defined#'
+    path: database/factories

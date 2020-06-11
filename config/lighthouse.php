@@ -49,9 +49,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | The guard to use for authenticating GraphQL requests, if needed.
-    | This setting is used whenever Lighthouse looks for an authenticated
-    | user, for example in directives such as @guard or @can.
-    | TODO this setting will default to 'api' in v5
+    | This setting is used whenever Lighthouse looks for an authenticated user, for example in directives
+    | such as `@guard` and when applying the `AttemptAuthentication` middleware.
     |
     */
 
@@ -131,41 +130,24 @@ return [
     | Pagination
     |--------------------------------------------------------------------------
     |
-    | Limits the maximum "count" that users may pass as an argument
-    | to fields that are paginated with the @paginate directive.
-    | A setting of "null" means the count is unrestricted.
+    | Set defaults for the pagination features within Lighthouse, such as
+    | the @paginate directive, or paginated relation directives.
     |
     */
 
-    'paginate_max_count' => null,
+    'pagination' => [
+        /*
+         * Allow clients to query paginated lists without specifying the amount of items.
+         * Setting this to `null` means clients have to explicitly ask for the count.
+         */
+        'default_count' => null,
 
-    /*
-    |--------------------------------------------------------------------------
-    | Pagination Amount Argument
-    |--------------------------------------------------------------------------
-    |
-    | Set the name to use for the generated argument on paginated fields
-    | that controls how many results are returned.
-    |
-    | DEPRECATED This setting will be removed in v5.
-    |
-    */
-
-    'pagination_amount_argument' => 'first',
-
-    /*
-    |--------------------------------------------------------------------------
-    | @orderBy input name
-    |--------------------------------------------------------------------------
-    |
-    | Set the name to use for the generated argument on the
-    | OrderByClause used for the @orderBy directive.
-    |
-    | DEPRECATED This setting will be removed in v5.
-    |
-    */
-
-    'orderBy' => 'field',
+        /*
+         * Limit the maximum amount of items that clients can request from paginated lists.
+         * Setting this to `null` means the count is unrestricted.
+         */
+        'max_count' => null,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -230,6 +212,19 @@ return [
     */
 
     'transactional_mutations' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Mass Assignment Protection
+    |--------------------------------------------------------------------------
+    |
+    | If set to true, mutations will use forceFill() over fill() when populating
+    | a model with arguments in mutation directives. Since GraphQL constrains
+    | allowed inputs by design, mass assignment protection is not needed.
+    |
+    */
+
+    'force_fill' => true,
 
     /*
     |--------------------------------------------------------------------------

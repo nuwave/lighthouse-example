@@ -1,12 +1,8 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
 /vendor
 /.env
-/.env.backup
 /.phpstorm.meta.php
 /.phpunit.result.cache
 /_ide_helper.php
 /_lighthouse_ide_helper.php
 /schema-directives.graphql
+/programmatic-types.graphql
