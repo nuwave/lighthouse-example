@@ -16,7 +16,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "mll-lab/laravel-graphql-playground": "^2.1",
-        "nuwave/lighthouse": "dev-master"
+        "nuwave/lighthouse": "^4.15.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",
@@ -26,7 +26,7 @@
         "laravel/tinker": "^2.0",
         "mockery/mockery": "^1.3.1",
         "nunomaduro/collision": "^4.1",
-        "nunomaduro/larastan": "0.6.0",
+        "nunomaduro/larastan": "0.6.1",
         "phpunit/phpunit": "^8.5"
     },
     "config": {
@@ -53,12 +53,6 @@
             "Tests\\": "tests/"
         }
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/spawnia/larastan.git"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
