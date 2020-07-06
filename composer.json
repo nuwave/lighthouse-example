@@ -15,6 +15,7 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
+        "laravel/sanctum": "^2.4",
         "mll-lab/laravel-graphql-playground": "^2.1",
         "nuwave/lighthouse": "^4.15.0"
     },

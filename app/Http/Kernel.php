@@ -25,6 +25,11 @@ class Kernel extends HttpKernel
      * @var array<string, array<string|class-string>>
      */
     protected $middlewareGroups = [
+        'web' => [
+            \Illuminate\Cookie\Middleware\EncryptCookies::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+        ],
         'api' => [
             'throttle:60,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
