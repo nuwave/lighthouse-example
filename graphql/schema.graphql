@@ -9,7 +9,7 @@ type Mutation {
     login(email: String!, password: String!): User!
 
     "Log out from the current session, showing the user one last time."
-    logout: User! @guard
+    logout: User @guard
 }
 
 #import models/*.graphql
