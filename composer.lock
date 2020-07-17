@@ -1110,16 +1110,16 @@
         },
         {
             "name": "mll-lab/laravel-graphql-playground",
-            "version": "v2.2.1",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mll-lab/laravel-graphql-playground.git",
-                "reference": "e8527486485676a2c91eb9ac4a790c54c621822d"
+                "reference": "81a557cefb65d3bcb2f6e2c8d245e301078e09f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mll-lab/laravel-graphql-playground/zipball/e8527486485676a2c91eb9ac4a790c54c621822d",
-                "reference": "e8527486485676a2c91eb9ac4a790c54c621822d",
+                "url": "https://api.github.com/repos/mll-lab/laravel-graphql-playground/zipball/81a557cefb65d3bcb2f6e2c8d245e301078e09f6",
+                "reference": "81a557cefb65d3bcb2f6e2c8d245e301078e09f6",
                 "shasum": ""
             },
             "require": {
@@ -1161,7 +1161,7 @@
                 "graphql-playground",
                 "laravel"
             ],
-            "time": "2020-07-06T19:28:28+00:00"
+            "time": "2020-07-17T08:53:30+00:00"
         },
         {
             "name": "monolog/monolog",
