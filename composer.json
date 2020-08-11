@@ -16,7 +16,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "mll-lab/laravel-graphql-playground": "^2.1",
-        "nuwave/lighthouse": "^4.15.0"
+        "nuwave/lighthouse": "^4.16.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",
