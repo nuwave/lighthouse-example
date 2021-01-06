@@ -33,6 +33,9 @@ class User extends Authenticatable
     use HasFactory;
     use Notifiable;
 
+    /**
+     * @var array<string, mixed>
+     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
