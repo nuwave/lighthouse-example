@@ -5,8 +5,6 @@ parameters:
   paths:
   - app
   - database/factories
-  - database/seeds
+  - database/seeders
   - tests
   ignoreErrors:
-  - message: '#Variable \$factory might not be defined#'
-    path: database/factories

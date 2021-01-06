@@ -13,7 +13,9 @@ class PostTest extends TestCase
 
     public function testCreatePost(): void
     {
-        $this->be(factory(User::class)->create());
+        $this->be(
+            User::factory()->create()
+        );
 
         $id = Post::max('id') + 1;
         $title = 'Some title';

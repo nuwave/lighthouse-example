@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.0.0"
+        uses: "actions/checkout@v2"
 
       - name: "Run composer normalize"
         uses: "docker://localheinz/composer-normalize-action:0.5.2"
@@ -33,15 +33,14 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.0.0"
+        uses: "actions/checkout@v2"
         with:
           ref: "${{ github.head_ref }}"
 
       - name: "Prettify markdown"
-        uses: "creyD/prettier_action@v2.2"
+        uses: "creyD/prettier_action@v3.2"
         with:
           prettier_options: '--write --tab-width=2 **/*.md'
-          branch: "${{ github.head_ref }}"
           commit_message: "Prettify markdown"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
@@ -53,27 +52,20 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.0.0"
+        uses: "actions/checkout@v2"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@2.1.0"
+        uses: "shivammathur/setup-php@v2"
         with:
           coverage: "none"
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ env.PHP_VERSION }}"
 
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
-        with:
-          path: "~/.composer/cache"
-          key: "php-${{ matrix.php-version }}-composer-${{ matrix.laravel-version }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.laravel-version }}-"
-
       - name: "Install dependencies with composer"
         run: "composer install"
 
       - name: "Run phpstan/phpstan"
-        run: "vendor/bin/phpstan analyse"
+        run: "composer stan"
 
   tests:
     name: "Tests"
@@ -82,21 +74,14 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.0.0"
+        uses: "actions/checkout@v2"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@2.1.0"
+        uses: "shivammathur/setup-php@v2"
         with:
           coverage: "none"
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ env.PHP_VERSION }}"
-
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
-        with:
-          path: "~/.composer/cache"
-          key: "php-${{ matrix.php-version }}-composer-${{ matrix.laravel-version }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.laravel-version }}-"
 
       - name: "Install dependencies with composer"
         run: "composer install"
@@ -107,4 +92,4 @@ jobs:
           mysql --user=root --password=root --execute='CREATE DATABASE laravel;'
 
       - name: "Run tests with phpunit/phpunit"
-        run: "vendor/bin/phpunit --colors=always --verbose"
+        run: "composer test"
