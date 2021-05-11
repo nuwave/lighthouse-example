@@ -63,12 +63,6 @@
             "@php artisan ide-helper:generate",
             "@php artisan ide-helper:meta",
             "@php artisan lighthouse:ide-helper"
-        ],
-        "stan": [
-            "phpstan analyse --memory-limit=2048"
-        ],
-        "test": [
-            "phpunit"
         ]
     }
 }
