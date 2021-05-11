@@ -65,7 +65,7 @@ jobs:
         run: "composer install"
 
       - name: "Run phpstan/phpstan"
-        run: "composer stan"
+        run: "vendor/bin/phpstan"
 
   tests:
     name: "Tests"
@@ -92,4 +92,4 @@ jobs:
           mysql --user=root --password=root --execute='CREATE DATABASE laravel;'
 
       - name: "Run tests with phpunit/phpunit"
-        run: "composer test"
+        run: "vendor/bin/phpunit"
