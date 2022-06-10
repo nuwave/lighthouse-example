@@ -24,24 +24,25 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *
  * Relations
  * @property-read \App\Models\User $author
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Comment[] $comments
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Comment> $comments
  *
  * @mixin \Eloquent
  */
-class Post extends Model
+final class Post extends Model
 {
     protected static function boot()
     {
         parent::boot();
 
         self::creating(function (Post $post): void {
-            if($post->author_id === null) {
+            if ($post->author_id === null) {
                 $user = auth()->user();
-                if($user === null) {
+                if ($user === null) {
                     throw new AuthenticationException();
                 }
+                assert($user instanceof User);
 
-                $post->author_id = $user->getAuthIdentifier();
+                $post->author_id = $user->id;
             }
         });
     }

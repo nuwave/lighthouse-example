@@ -10,29 +10,31 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3 || ^8",
-        "fideloper/proxy": "^4",
-        "fruitcake/laravel-cors": "^1",
-        "guzzlehttp/guzzle": "^6",
-        "laravel/framework": "^8",
+        "php": "^8.0.2",
+        "guzzlehttp/guzzle": "^7.2",
+        "laravel/framework": "^9.11",
         "mll-lab/laravel-graphql-playground": "^2",
-        "nuwave/lighthouse": "^5"
+        "nuwave/lighthouse": "^5",
+        "laravel/tinker": "^2.7"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2",
-        "facade/ignition": "^2",
-        "fzaninotto/faker": "^1",
+        "ergebnis/composer-normalize": "^2.28",
+        "fakerphp/faker": "^1.9.1",
         "haydenpierce/class-finder": "^0.4",
-        "laravel/tinker": "^2",
-        "mockery/mockery": "^1",
-        "nunomaduro/collision": "^4",
-        "nunomaduro/larastan": "^0.6",
-        "phpunit/phpunit": "^9"
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "nunomaduro/larastan": "^1",
+        "phpunit/phpunit": "^9.5.10",
+        "spatie/laravel-ignition": "^1"
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        }
     },
     "extra": {
         "laravel": {
@@ -63,6 +65,15 @@
             "@php artisan ide-helper:generate",
             "@php artisan ide-helper:meta",
             "@php artisan lighthouse:ide-helper"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
         ]
     }
 }

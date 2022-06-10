@@ -6,11 +6,11 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class UserFactory extends Factory
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ */
+final class UserFactory extends Factory
 {
-    /**
-     * @var class-string<\Illuminate\Database\Eloquent\Model>
-     */
     protected $model = User::class;
 
     /**
