@@ -11,3 +11,8 @@
 **An example project using [nuwave/lighthouse](https://github.com/nuwave/lighthouse).**
 
 </div>
+
+## Minimalism
+
+In order to keep maintenance as simple as possible, the project has been stripped of
+all unnecessary components or files.

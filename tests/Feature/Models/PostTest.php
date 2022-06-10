@@ -7,14 +7,14 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class PostTest extends TestCase
+final class PostTest extends TestCase
 {
     use RefreshDatabase;
 
     public function testCreatePost(): void
     {
         $this->be(
-            User::factory()->create()
+            User::factory()->createOne()
         );
 
         $id = Post::max('id') + 1;

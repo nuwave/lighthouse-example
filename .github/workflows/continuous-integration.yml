@@ -1,95 +1,64 @@
-name: "Continuous Integration"
+name: Continuous Integration
 
 on:
   pull_request:
   push:
     branches:
-      - "master"
+      - master
 
 env:
-  PHP_EXTENSIONS: "mbstring, mysqli, pdo_mysql"
-  PHP_VERSION: "7.4"
+  PHP_EXTENSIONS: mbstring, mysqli, pdo_mysql
+  PHP_VERSION: 8.0
   DB_DATABASE: laravel
   DB_USERNAME: root
   DB_PASSWORD: root
 
 jobs:
-  composer-normalize:
-    name: "composer-normalize"
-
-    runs-on: "ubuntu-latest"
-
-    steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v2"
-
-      - name: "Run composer normalize"
-        uses: "docker://localheinz/composer-normalize-action:0.5.2"
-
-  prettier:
-    name: "Prettify markdown"
-
-    runs-on: "ubuntu-latest"
-
-    steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v2"
-        with:
-          ref: "${{ github.head_ref }}"
-
-      - name: "Prettify markdown"
-        uses: "creyD/prettier_action@v3.2"
-        with:
-          prettier_options: '--write --tab-width=2 **/*.md'
-          commit_message: "Prettify markdown"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
   static-code-analysis:
-    name: "Static Code Analysis"
+    name: Static Code Analysis
 
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v2"
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@v2"
+      - name: Install PHP with extensions
+        uses: shivammathur/setup-php@v2
         with:
-          coverage: "none"
-          extensions: "${{ env.PHP_EXTENSIONS }}"
-          php-version: "${{ env.PHP_VERSION }}"
+          coverage: none
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          php-version: ${{ env.PHP_VERSION }}
 
-      - name: "Install dependencies with composer"
-        run: "composer install"
+      - name: Install dependencies with composer
+        run: composer install
 
-      - name: "Run phpstan/phpstan"
-        run: "vendor/bin/phpstan"
+      - name: Run phpstan/phpstan
+        run: vendor/bin/phpstan
 
   tests:
-    name: "Tests"
+    name: Tests
 
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v2"
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@v2"
+      - name: Install PHP with extensions
+        uses: shivammathur/setup-php@v2
         with:
-          coverage: "none"
-          extensions: "${{ env.PHP_EXTENSIONS }}"
-          php-version: "${{ env.PHP_VERSION }}"
+          coverage: none
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          php-version: ${{ env.PHP_VERSION }}
 
-      - name: "Install dependencies with composer"
-        run: "composer install"
+      - name: Install dependencies with composer
+        run: composer install
 
-      - name: "Set up the database"
+      - name: Set up the database
         run: |
           sudo systemctl start mysql.service
           mysql --user=root --password=root --execute='CREATE DATABASE laravel;'
 
-      - name: "Run tests with phpunit/phpunit"
-        run: "vendor/bin/phpunit"
+      - name: Run tests with phpunit/phpunit
+        run: vendor/bin/phpunit

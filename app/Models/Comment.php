@@ -24,7 +24,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *
  * @mixin \Eloquent
  */
-class Comment extends Model
+final class Comment extends Model
 {
     public function post(): BelongsTo
     {
