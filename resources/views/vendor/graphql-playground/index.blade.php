@@ -21,17 +21,18 @@
 
 <div id="root"/>
 <script type="text/javascript">
-    window.addEventListener('load', function (event) {
+    window.addEventListener('load', function () {
         const root = document.getElementById('root');
 
         GraphQLPlayground.init(root, {
             endpoint: "{{url(config('graphql-playground.endpoint'))}}",
+            subscriptionEndpoint: "{{config('graphql-playground.subscriptionEndpoint')}}",
             settings: {
                 'request.credentials': 'same-origin',
             },
             headers: {
-              'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-            }
+              'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+            },
         })
     })
 </script>
