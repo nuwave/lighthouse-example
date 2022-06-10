@@ -3,7 +3,7 @@ name: Autoformat
 on:
   push:
     branches:
-      - *
+      - '*'
 
 jobs:
   composer-normalize:
