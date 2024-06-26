@@ -7,9 +7,6 @@ on:
 env:
   PHP_EXTENSIONS: mbstring, mysqli, pdo_mysql
   PHP_VERSION: 8.3
-  DB_DATABASE: laravel
-  DB_USERNAME: root
-  DB_PASSWORD: root
 
 jobs:
   static-code-analysis:
@@ -41,5 +38,9 @@ jobs:
           php-version: ${{ env.PHP_VERSION }}
 
       - uses: ramsey/composer-install@v3
+
+      - run: touch database/database.sqlite
+
+      - run: php artisan migrate
 
       - run: vendor/bin/phpunit
