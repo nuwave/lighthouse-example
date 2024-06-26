@@ -42,8 +42,4 @@ jobs:
 
       - uses: ramsey/composer-install@v3
 
-      - run: |
-          sudo systemctl start mysql.service
-          mysql --user=root --password=root --execute='CREATE DATABASE laravel;'
-
       - run: vendor/bin/phpunit
