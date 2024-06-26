@@ -1,0 +1,49 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+env:
+  PHP_EXTENSIONS: mbstring, mysqli, pdo_mysql
+  PHP_VERSION: 8.3
+  DB_DATABASE: laravel
+  DB_USERNAME: root
+  DB_PASSWORD: root
+
+jobs:
+  static-code-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          php-version: ${{ env.PHP_VERSION }}
+
+      - uses: ramsey/composer-install@v3
+
+      - run: vendor/bin/phpstan
+
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          php-version: ${{ env.PHP_VERSION }}
+
+      - uses: ramsey/composer-install@v3
+
+      - run: |
+          sudo systemctl start mysql.service
+          mysql --user=root --password=root --execute='CREATE DATABASE laravel;'
+
+      - run: vendor/bin/phpunit

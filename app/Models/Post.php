@@ -30,28 +30,24 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 final class Post extends Model
 {
-    protected static function boot()
+    protected static function booted(): void
     {
-        parent::boot();
-
         self::creating(function (Post $post): void {
-            if ($post->author_id === null) {
-                $user = auth()->user();
-                if ($user === null) {
-                    throw new AuthenticationException();
-                }
-                assert($user instanceof User);
-
-                $post->author_id = $user->id;
+            if ($post->author()->doesntExist()) {
+                $user = auth()->user()
+                    ?? throw new AuthenticationException();
+                $post->author()->associate($user);
             }
         });
     }
 
+    /** @return \Illuminate\Database\Eloquent\Relations\BelongsTo<\App\Models\User, self> */
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    /** @return \Illuminate\Database\Eloquent\Relations\HasMany<\App\Models\Comment> */
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
