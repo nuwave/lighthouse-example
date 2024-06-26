@@ -26,6 +26,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 final class Comment extends Model
 {
+    /** @return \Illuminate\Database\Eloquent\Relations\BelongsTo<\App\Models\Post, self> */
     public function post(): BelongsTo
     {
         return $this->belongsTo(Post::class);

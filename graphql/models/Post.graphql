@@ -1,6 +1,6 @@
 extend type Query {
-    posts: [Post!]! @all
-    post(id: Int! @eq): Post @find
+    posts: [Post!]! @paginate(defaultCount: 10)
+    post(id: ID! @eq): Post @find
 }
 
 extend type Mutation {

@@ -11,11 +11,10 @@ final class PostTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testCreatePost(): void
+    public function test_create_post(): void
     {
-        $this->be(
-            User::factory()->createOne()
-        );
+        $user = User::factory()->createOne();
+        $this->be($user);
 
         $id = Post::max('id') + 1;
         $title = 'Some title';
@@ -36,7 +35,8 @@ final class PostTest extends TestCase
             ', [
                 'title' => $title,
                 'content' => $content,
-            ])->assertExactJson([
+            ])
+            ->assertExactJson([
                 'data' => [
                     'createPost' => [
                         'id' => "$id",

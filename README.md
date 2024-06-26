@@ -10,6 +10,25 @@
 
 **An example project using [nuwave/lighthouse](https://github.com/nuwave/lighthouse).**
 
+## Setup
+
+```shell
+composer install
+cp .env.example .env
+touch database/database.sqlite
+php artisan migrate
+```
+
+## Usage
+
+Run the server with the following command:
+
+```shell
+php artisan serve
+```
+
+Access [the GraphiQL UI](https://github.com/graphql/graphiql/blob/main/packages/graphiql/README.md) at `/graphiql`.
+
 </div>
 
 ## Minimalism
