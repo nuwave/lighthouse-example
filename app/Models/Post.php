@@ -41,13 +41,13 @@ final class Post extends Model
         });
     }
 
-    /** @return \Illuminate\Database\Eloquent\Relations\BelongsTo<\App\Models\User, self> */
+    /** @return \Illuminate\Database\Eloquent\Relations\BelongsTo<\App\Models\User, $this> */
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    /** @return \Illuminate\Database\Eloquent\Relations\HasMany<\App\Models\Comment> */
+    /** @return \Illuminate\Database\Eloquent\Relations\HasMany<\App\Models\Comment, $this> */
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
