@@ -10,24 +10,22 @@
         "laravel-graphql"
     ],
     "require": {
-        "php": "^8.0.2",
-        "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^9.11",
+        "php": "^8.2",
+        "laravel/framework": "^11",
         "laravel/sanctum": "^2.15",
-        "laravel/tinker": "^2.7",
-        "mll-lab/laravel-graphql-playground": "^2",
-        "nuwave/lighthouse": "^5"
+        "laravel/tinker": "^2.9",
+        "mll-lab/laravel-graphiql": "^3",
+        "nuwave/lighthouse": "^6"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2",
+        "barryvdh/laravel-ide-helper": "^3",
         "ergebnis/composer-normalize": "^2.28",
         "fakerphp/faker": "^1.9.1",
-        "haydenpierce/class-finder": "^0.4",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.1",
-        "nunomaduro/larastan": "^1",
-        "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1"
+        "haydenpierce/class-finder": "^0.5",
+        "larastan/larastan": "^2",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8",
+        "phpunit/phpunit": "^11"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -64,12 +62,6 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
             "@ide-helper"
-        ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
         ],
         "ide-helper": [
             "@php artisan ide-helper:generate",

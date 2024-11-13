@@ -6,16 +6,11 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
- */
+/** @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User> */
 final class UserFactory extends Factory
 {
     protected $model = User::class;
 
-    /**
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [

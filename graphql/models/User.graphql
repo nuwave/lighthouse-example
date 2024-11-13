@@ -1,6 +1,6 @@
 extend type Query {
     me: User @auth
-    user(id: ID @eq): User @find
+    user(id: ID! @eq): User @find
     users: [User!]! @paginate(defaultCount: 10)
 }
 

@@ -8,8 +8,8 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id('id');
+        Schema::create('comments', function (Blueprint $table): void {
+            $table->id();
             $table->unsignedBigInteger('post_id');
             $table->string('reply');
             $table->timestamps();
