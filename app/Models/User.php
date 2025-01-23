@@ -41,7 +41,7 @@ final class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /** @return \Illuminate\Database\Eloquent\Relations\HasMany<\App\Models\Post> */
+    /** @return \Illuminate\Database\Eloquent\Relations\HasMany<\App\Models\Post, $this> */
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class, 'author_id');
