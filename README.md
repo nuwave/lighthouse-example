@@ -31,11 +31,11 @@ In order to log in through Sanctum, find out the email of the seeded user:
 
 ```graphql
 {
-    users {
-        data {
-            email
-        }
+  users {
+    data {
+      email
     }
+  }
 }
 ```
 
@@ -43,9 +43,9 @@ Then, log in with the following mutation:
 
 ```graphql
 mutation {
-    login(email: "<email>", password: "password") {
-        id
-    }
+  login(email: "<email>", password: "password") {
+    id
+  }
 }
 ```
 
@@ -53,11 +53,11 @@ To validate you are in fact logged in, run the following query:
 
 ```graphql
 {
-    me {
-        id
-    }
+  me {
+    id
+  }
 }
-``` 
+```
 
 ## Minimalism
 
