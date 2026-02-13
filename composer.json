@@ -12,6 +12,7 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11",
+        "laravel/sanctum": "^4",
         "laravel/tinker": "^2.9",
         "mll-lab/laravel-graphiql": "^3",
         "nuwave/lighthouse": "^6"

@@ -27,6 +27,38 @@ php artisan serve
 
 Access [the GraphiQL UI](https://github.com/graphql/graphiql/blob/main/packages/graphiql/README.md) at `/graphiql`.
 
+In order to log in through Sanctum, find out the email of the seeded user:
+
+```graphql
+{
+  users {
+    data {
+      email
+    }
+  }
+}
+```
+
+Then, log in with the following mutation:
+
+```graphql
+mutation {
+  login(email: "<email>", password: "password") {
+    id
+  }
+}
+```
+
+To validate you are in fact logged in, run the following query:
+
+```graphql
+{
+  me {
+    id
+  }
+}
+```
+
 ## Minimalism
 
 In order to keep maintenance as simple as possible,
