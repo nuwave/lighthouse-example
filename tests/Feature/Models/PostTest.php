@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\Models;
 
-use App\Models\Post;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -15,12 +14,6 @@ final class PostTest extends TestCase
     {
         $user = User::factory()->createOne();
         $this->be($user);
-
-        /** @var int $maxId */
-        $maxId = Post::max('id');
-        $id = $maxId + 1;
-        $title = 'Some title';
-        $content = 'Some content';
 
         $this
             ->graphQL(/** @lang GraphQL */ '
@@ -35,15 +28,15 @@ final class PostTest extends TestCase
                 }
             }
             ', [
-                'title' => $title,
-                'content' => $content,
+                'title' => 'Some title',
+                'content' => 'Some content',
             ])
             ->assertExactJson([
                 'data' => [
                     'createPost' => [
-                        'id' => "$id",
-                        'title' => $title,
-                        'content' => $content,
+                        'id' => '1',
+                        'title' => 'Some title',
+                        'content' => 'Some content',
                     ]
                 ]
             ]);
