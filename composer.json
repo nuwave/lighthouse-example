@@ -21,7 +21,7 @@
         "ergebnis/composer-normalize": "^2.28",
         "fakerphp/faker": "^1.9.1",
         "haydenpierce/class-finder": "^0.5",
-        "larastan/larastan": "^2",
+        "larastan/larastan": "^3",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8",
         "phpunit/phpunit": "^11"
