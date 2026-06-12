@@ -13,7 +13,7 @@
         "php": "^8.2",
         "laravel/framework": "^11",
         "laravel/tinker": "^3.0",
-        "mll-lab/laravel-graphiql": "^3",
+        "mll-lab/laravel-graphiql": "^4",
         "nuwave/lighthouse": "^6"
     },
     "require-dev": {
