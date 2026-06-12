@@ -16,7 +16,7 @@ final class PostTest extends TestCase
         $user = User::factory()->createOne();
         $this->be($user);
 
-        $id = Post::max('id') + 1;
+        $id = (int) Post::max('id') + 1;
         $title = 'Some title';
         $content = 'Some content';
 
