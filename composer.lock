@@ -1060,16 +1060,16 @@
         },
         {
             "name": "haydenpierce/class-finder",
-            "version": "0.5.3",
+            "version": "0.5.4",
             "source": {
                 "type": "git",
-                "url": "git@gitlab.com:hpierce1102/ClassFinder.git",
-                "reference": "40703445c18784edcc6411703e7c3869af11ec8c"
+                "url": "https://gitlab.com/hpierce1102/ClassFinder.git",
+                "reference": "a4bd343078ce48c118742152fdd62315a7ac6263"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/hpierce1102%2FClassFinder/repository/archive.zip?sha=40703445c18784edcc6411703e7c3869af11ec8c",
-                "reference": "40703445c18784edcc6411703e7c3869af11ec8c",
+                "url": "https://gitlab.com/api/v4/projects/hpierce1102%2FClassFinder/repository/archive.zip?sha=a4bd343078ce48c118742152fdd62315a7ac6263",
+                "reference": "a4bd343078ce48c118742152fdd62315a7ac6263",
                 "shasum": ""
             },
             "require": {
@@ -1098,40 +1098,44 @@
                 }
             ],
             "description": "A library that can provide of a list of classes in a given namespace",
-            "time": "2023-06-18T17:43:01+00:00"
+            "support": {
+                "issues": "https://gitlab.com/hpierce1102/ClassFinder/-/issues",
+                "source": "https://gitlab.com/hpierce1102/ClassFinder/-/tree/0.5.4"
+            },
+            "time": "2026-05-30T22:14:30+00:00"
         },
         {
             "name": "laragraph/utils",
-            "version": "v2.1.0",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laragraph/utils.git",
-                "reference": "d5efa214024d9afb65cca72eb6dfac32e459d660"
+                "reference": "0c32d90566658ab5a1979b13e8ab6c13b375c91f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laragraph/utils/zipball/d5efa214024d9afb65cca72eb6dfac32e459d660",
-                "reference": "d5efa214024d9afb65cca72eb6dfac32e459d660",
+                "url": "https://api.github.com/repos/laragraph/utils/zipball/0c32d90566658ab5a1979b13e8ab6c13b375c91f",
+                "reference": "0c32d90566658ab5a1979b13e8ab6c13b375c91f",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "~5.6.0 || ~5.7.0 || ~5.8.0 || ^6 || ^7 || ^8 || ^9 || ^10 || ^11",
-                "illuminate/http": "~5.6.0 || ~5.7.0 || ~5.8.0 || ^6 || ^7 || ^8 || ^9 || ^10 || ^11",
+                "illuminate/contracts": "~5.6.0 || ~5.7.0 || ~5.8.0 || ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || ^13",
+                "illuminate/http": "~5.6.0 || ~5.7.0 || ~5.8.0 || ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || ^13",
                 "php": "^7.2 || ^8",
-                "thecodingmachine/safe": "^1.1 || ^2",
+                "thecodingmachine/safe": "^1.1 || ^2 || ^3",
                 "webonyx/graphql-php": "^0.13.2 || ^14 || ^15"
             },
             "require-dev": {
                 "ergebnis/composer-normalize": "^2.11",
                 "jangregor/phpstan-prophecy": "^1",
-                "mll-lab/php-cs-fixer-config": "^4.4",
-                "orchestra/testbench": "~3.6.0 || ~3.7.0 || ~3.8.0 || ~3.9.0 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9 || ^9.x-dev",
+                "mll-lab/php-cs-fixer-config": "^4",
+                "orchestra/testbench": "~3.6.0 || ~3.7.0 || ~3.8.0 || ~3.9.0 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9 || ^10 || ^11",
                 "phpstan/extension-installer": "^1",
                 "phpstan/phpstan": "^1",
                 "phpstan/phpstan-deprecation-rules": "^1",
                 "phpstan/phpstan-phpunit": "^1",
                 "phpstan/phpstan-strict-rules": "^1",
-                "phpunit/phpunit": "^7.5 || ^8.5 || ^9 || ^10.5",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9 || ^10.5 || ^11 || ^12",
                 "thecodingmachine/phpstan-safe-rule": "^1.1"
             },
             "type": "library",
@@ -1156,7 +1160,7 @@
                 "issues": "https://github.com/laragraph/utils/issues",
                 "source": "https://github.com/laragraph/utils"
             },
-            "time": "2024-02-18T10:24:29+00:00"
+            "time": "2026-03-04T07:16:49+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2696,62 +2700,61 @@
         },
         {
             "name": "nuwave/lighthouse",
-            "version": "v6.49.1",
+            "version": "v6.67.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nuwave/lighthouse.git",
-                "reference": "f6b46c159de97e266e1a7c1c52fa0ca2689a41bc"
+                "reference": "49ad62035379ba0139f1b6d3778711603838b014"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nuwave/lighthouse/zipball/f6b46c159de97e266e1a7c1c52fa0ca2689a41bc",
-                "reference": "f6b46c159de97e266e1a7c1c52fa0ca2689a41bc",
+                "url": "https://api.github.com/repos/nuwave/lighthouse/zipball/49ad62035379ba0139f1b6d3778711603838b014",
+                "reference": "49ad62035379ba0139f1b6d3778711603838b014",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "haydenpierce/class-finder": "^0.4 || ^0.5",
-                "illuminate/auth": "^9 || ^10 || ^11",
-                "illuminate/bus": "^9 || ^10 || ^11",
-                "illuminate/contracts": "^9 || ^10 || ^11",
-                "illuminate/http": "^9 || ^10 || ^11",
-                "illuminate/pagination": "^9 || ^10 || ^11",
-                "illuminate/queue": "^9 || ^10 || ^11",
-                "illuminate/routing": "^9 || ^10 || ^11",
-                "illuminate/support": "^9 || ^10 || ^11",
-                "illuminate/validation": "^9 || ^10 || ^11",
+                "haydenpierce/class-finder": "^0.4 || ^0.5 || ^0.6",
+                "illuminate/auth": "^9 || ^10 || ^11 || ^12 || ^13",
+                "illuminate/bus": "^9 || ^10 || ^11 || ^12 || ^13",
+                "illuminate/contracts": "^9 || ^10 || ^11 || ^12 || ^13",
+                "illuminate/http": "^9 || ^10 || ^11 || ^12 || ^13",
+                "illuminate/pagination": "^9 || ^10 || ^11 || ^12 || ^13",
+                "illuminate/queue": "^9 || ^10 || ^11 || ^12 || ^13",
+                "illuminate/routing": "^9 || ^10 || ^11 || ^12 || ^13",
+                "illuminate/support": "^9 || ^10 || ^11 || ^12 || ^13",
+                "illuminate/validation": "^9 || ^10 || ^11 || ^12 || ^13",
                 "laragraph/utils": "^1.5 || ^2",
                 "php": "^8",
-                "thecodingmachine/safe": "^1 || ^2",
+                "thecodingmachine/safe": "^1 || ^2 || ^3",
                 "webonyx/graphql-php": "^15"
             },
             "require-dev": {
                 "algolia/algoliasearch-client-php": "^3",
                 "bensampo/laravel-enum": "^5 || ^6",
-                "dms/phpunit-arraysubset-asserts": "^0.4 || ^0.5",
                 "ergebnis/composer-normalize": "^2.2.2",
                 "fakerphp/faker": "^1.21",
-                "google/protobuf": "^3.21",
-                "larastan/larastan": "^2.6.1",
-                "laravel/framework": "^9 || ^10 || ^11",
+                "google/protobuf": "^3.21 || ^4.33.6",
+                "larastan/larastan": "^2.9.14 || ^3.0.4",
+                "laravel/framework": "^9 || ^10 || ^11 || ^12 || ^13",
                 "laravel/legacy-factories": "^1.1.1",
                 "laravel/pennant": "^1",
-                "laravel/scout": "^8 || ^9 || ^10 || ^11",
+                "laravel/scout": "^8 || ^9 || ^10",
                 "mattiasgeniar/phpunit-query-count-assertions": "^1.1",
-                "mll-lab/graphql-php-scalars": "^6",
+                "mll-lab/graphql-php-scalars": "^6.4.1",
                 "mll-lab/php-cs-fixer-config": "^5",
                 "mockery/mockery": "^1.5",
-                "nesbot/carbon": "^2.62.1",
-                "orchestra/testbench": "^7.11 || ^8.8 || ^9",
+                "nesbot/carbon": "^2.62.1 || ^3.8.4",
+                "orchestra/testbench": "^7.50 || ^8.32 || ^9.10 || ^10.1 || ^11",
                 "phpbench/phpbench": "^1.2.6",
                 "phpstan/extension-installer": "^1",
-                "phpstan/phpstan": "^1.10.3",
-                "phpstan/phpstan-mockery": "^1.1",
-                "phpstan/phpstan-phpunit": "^1.1.1",
-                "phpunit/phpunit": "^9.6.4 || ^10 || ^11",
+                "phpstan/phpstan": "^1.12.18 || ^2",
+                "phpstan/phpstan-mockery": "^1.1.3 || ^2",
+                "phpstan/phpstan-phpunit": "^1.1.1 || ^2",
+                "phpunit/phpunit": "^9.6.4 || ^10 || ^11 || ^12",
                 "predis/predis": "^1.1 || ^2.1",
                 "pusher/pusher-php-server": "^5 || ^6 || ^7.0.2",
-                "rector/rector": "^1",
+                "rector/rector": "^1 || ^2",
                 "thecodingmachine/phpstan-safe-rule": "^1.2"
             },
             "suggest": {
@@ -2823,7 +2826,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2025-01-17T15:31:00+00:00"
+            "time": "2026-06-07T09:00:40+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -6020,46 +6023,31 @@
         },
         {
             "name": "thecodingmachine/safe",
-            "version": "v2.5.0",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/safe.git",
-                "reference": "3115ecd6b4391662b4931daac4eba6b07a2ac1f0"
+                "reference": "705683a25bacf0d4860c7dea4d7947bfd09eea19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/3115ecd6b4391662b4931daac4eba6b07a2ac1f0",
-                "reference": "3115ecd6b4391662b4931daac4eba6b07a2ac1f0",
+                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/705683a25bacf0d4860c7dea4d7947bfd09eea19",
+                "reference": "705683a25bacf0d4860c7dea4d7947bfd09eea19",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.0"
+                "php": "^8.1"
             },
             "require-dev": {
-                "phpstan/phpstan": "^1.5",
-                "phpunit/phpunit": "^9.5",
-                "squizlabs/php_codesniffer": "^3.2",
-                "thecodingmachine/phpstan-strict-rules": "^1.0"
+                "php-parallel-lint/php-parallel-lint": "^1.4",
+                "phpstan/phpstan": "^2",
+                "phpunit/phpunit": "^10",
+                "squizlabs/php_codesniffer": "^3.2"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2.x-dev"
-                }
-            },
             "autoload": {
                 "files": [
-                    "deprecated/apc.php",
-                    "deprecated/array.php",
-                    "deprecated/datetime.php",
-                    "deprecated/libevent.php",
-                    "deprecated/misc.php",
-                    "deprecated/password.php",
-                    "deprecated/mssql.php",
-                    "deprecated/stats.php",
-                    "deprecated/strings.php",
                     "lib/special_cases.php",
-                    "deprecated/mysqli.php",
                     "generated/apache.php",
                     "generated/apcu.php",
                     "generated/array.php",
@@ -6099,6 +6087,7 @@
                     "generated/mbstring.php",
                     "generated/misc.php",
                     "generated/mysql.php",
+                    "generated/mysqli.php",
                     "generated/network.php",
                     "generated/oci8.php",
                     "generated/opcache.php",
@@ -6111,6 +6100,7 @@
                     "generated/ps.php",
                     "generated/pspell.php",
                     "generated/readline.php",
+                    "generated/rnp.php",
                     "generated/rpminfo.php",
                     "generated/rrd.php",
                     "generated/sem.php",
@@ -6142,7 +6132,6 @@
                     "lib/DateTime.php",
                     "lib/DateTimeImmutable.php",
                     "lib/Exceptions/",
-                    "deprecated/Exceptions/",
                     "generated/Exceptions/"
                 ]
             },
@@ -6153,9 +6142,27 @@
             "description": "PHP core functions that throw exceptions instead of returning FALSE on error",
             "support": {
                 "issues": "https://github.com/thecodingmachine/safe/issues",
-                "source": "https://github.com/thecodingmachine/safe/tree/v2.5.0"
+                "source": "https://github.com/thecodingmachine/safe/tree/v3.4.0"
             },
-            "time": "2023-04-05T11:54:14+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/OskarStark",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/shish",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/silasjoisten",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/staabm",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-02-04T18:08:13+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
