@@ -1,10 +1,16 @@
 version: 2
+multi-ecosystem-groups:
+  all:
+    schedule:
+      interval: monthly
 updates:
   - package-ecosystem: composer
     directory: /
-    schedule:
-      interval: weekly
+    patterns:
+      - "*"
+    multi-ecosystem-group: all
   - package-ecosystem: github-actions
     directory: /
-    schedule:
-      interval: weekly
+    patterns:
+      - "*"
+    multi-ecosystem-group: all
