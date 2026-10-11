@@ -23,7 +23,7 @@ final class Login
 
         $guard = Auth::guard($guardName);
 
-        if( ! $guard->attempt($args)) {
+        if (! $guard->attempt($args)) {
             throw new Error('Invalid credentials.');
         }
 

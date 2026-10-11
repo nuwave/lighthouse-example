@@ -13,6 +13,7 @@
 ```shell
 composer install
 cp .env.example .env
+php artisan key:generate
 touch database/database.sqlite
 php artisan migrate --seed
 ```
@@ -26,6 +27,8 @@ php artisan serve
 ```
 
 Access [the GraphiQL UI](https://github.com/graphql/graphiql/blob/main/packages/graphiql/README.md) at `/graphiql`.
+
+Sanctum keeps sessions only for [stateful domains](https://laravel.com/docs/sanctum#configuring-your-first-party-domains), such as `127.0.0.1:8000`.
 
 In order to log in through Sanctum, find out the email of the seeded user:
 
