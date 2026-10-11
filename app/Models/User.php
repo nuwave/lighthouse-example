@@ -24,7 +24,7 @@ use Illuminate\Notifications\Notifiable;
  * @property \Illuminate\Support\Carbon|null $updated_at
  *
  * Relations
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<\Illuminate\Notifications\DatabaseNotification> $notifications
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Post> $posts
  *
  * @method static \Database\Factories\UserFactory factory(...$parameters)

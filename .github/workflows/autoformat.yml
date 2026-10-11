@@ -7,7 +7,7 @@ jobs:
   composer-normalize:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.head_ref }}
 
@@ -17,22 +17,22 @@ jobs:
           extensions: mbstring
           php-version: 8.3
 
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@v4
 
       - run: composer normalize
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Normalize composer.json
 
   prettier:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.head_ref }}
 
-      - uses: creyD/prettier_action@v4.3
+      - uses: creyD/prettier_action@v4.6
         with:
           prettier_options: --write --tab-width=2 *.md **/*.md
           branch: ${{ github.head_ref }}

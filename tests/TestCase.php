@@ -7,6 +7,5 @@ use Nuwave\Lighthouse\Testing\MakesGraphQLRequests;
 
 abstract class TestCase extends BaseTestCase
 {
-    use CreatesApplication;
     use MakesGraphQLRequests;
 }
