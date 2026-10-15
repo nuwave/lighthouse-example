@@ -31,3 +31,7 @@ Access [the GraphiQL UI](https://github.com/graphql/graphiql/blob/main/packages/
 
 In order to keep maintenance as simple as possible,
 the project has been stripped of all unnecessary components or files.
+
+## Variants
+
+The [`sanctum`](https://github.com/nuwave/lighthouse-example/tree/sanctum) branch adds session authentication with [Laravel Sanctum](https://laravel.com/docs/sanctum).
