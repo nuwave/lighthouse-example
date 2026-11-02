@@ -6,7 +6,7 @@ on:
 
 env:
   PHP_EXTENSIONS: mbstring, mysqli, pdo_mysql
-  PHP_VERSION: 8.3
+  PHP_VERSION: 8.4
   APP_ENV: testing
 
 jobs:
